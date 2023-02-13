@@ -55,7 +55,8 @@ events(){
         return {
             'click .hello': 'helloclick'
         }
-    }
+}
+
 helloclick(){
         this.data.number += 1
         this.render()
