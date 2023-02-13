@@ -9,8 +9,59 @@
 2) map.router.js - это машрутизатор вашего проекта.
 3) app.component.js - основной ваш компонент у него есть свои сабпоинты - это app.front.js, app.styles.js, app.data.js и app.script (Вы можете работать в одном файле но мне было так удобно)
 ## Мини гайд
-Весь html код пишется в поле template, стили в поле styles, весь js скрипт в поле script и в массив дата подобие переменных.
+### Html вы можете писать в отдельный файл и импортировать его или в поле template. Как импортировать:   // (Так же и со стилями)
+import template from "./app.component.html"
+...
+export const appComponent = new AppComponent({
+    .....
+    template: template,
+    .....
+    
+    
+}
 
+### Events - ивенты (функции к примеру) пишутся в функции events например:
+1) Мы сначало иницилизируем наш ивент: mouseover - это ивент mouseover, .hello - класс для определения нашего объекта и helloclick - это функция с действием
+events(){
+        return {
+            'mouseover .hello': 'helloclick'
+        }
+}
+helloclick(){
+        console.log("hello")
+}
+### Data - это подобие ваших переменных. 
+1) Вы должны объявить вашу Dat(у) именно в конструкторе! Например:
+constructor(config){
+  super(config)
+  this.data = {
+      hello: "Hello world"
+  }
+}
+2) Что бы использовать переменные:
+<p>
+  {{hello}}
+</p>
+
+### Важно!! Если вы хотите добавить реактивности в переменные то вы должны сделать так:
+constructor(config) {
+
+        super(config)
+
+        
+        this.data = {
+            number: 0
+        }
+}
+events(){
+        return {
+            'click .hello': 'helloclick'
+        }
+    }
+helloclick(){
+        this.data.number += 1
+        this.render()
+}
 ## Что вы можете делать с этим Framework(ом)?
 Все что угодно можете его улучшить добавив свои функции или исправив мои, можете выпускать свои новые Framework(и) для своего приложения и тд... Все что вам придет в голову делайте. 
 ## Будет ли улучшаться SMARTA?
