@@ -10,19 +10,10 @@
 3) app.component.js - основной ваш компонент у него есть свои сабпоинты - это app.front.js, app.styles.js, app.data.js и app.script (Вы можете работать в одном файле но мне было так удобно)
 ## Мини гайд
 ### Html вы можете писать в отдельный файл и импортировать его или в поле template. Как импортировать:   // (Так же и со стилями)
-import template from "./app.component.html"
-...
-export const appComponent = new AppComponent({
-    .....
-    template: template,
-    .....
-    
-    
-}
 
 ### Events - ивенты (функции к примеру) пишутся в функции events например:
 1) Мы сначало иницилизируем наш ивент: mouseover - это ивент mouseover, .hello - класс для определения нашего объекта и helloclick - это функция с действием
-events(){
+```events(){
         return {
             'mouseover .hello': 'helloclick'
         }
@@ -30,6 +21,7 @@ events(){
 helloclick(){
         console.log("hello")
 }
+```
 ### Data - это подобие ваших переменных. 
 1) Вы должны объявить вашу Dat(у) именно в конструкторе! Например:
 constructor(config){
