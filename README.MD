@@ -13,7 +13,8 @@
 
 ### Events - ивенты (функции к примеру) пишутся в функции events например:
 1) Мы сначало иницилизируем наш ивент: mouseover - это ивент mouseover, .hello - класс для определения нашего объекта и helloclick - это функция с действием
-```events(){
+```
+events(){
         return {
             'mouseover .hello': 'helloclick'
         }
