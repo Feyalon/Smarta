@@ -50,6 +50,7 @@ constructor(config) {
             number: 0
         }
 }
+
 events(){
         return {
             'click .hello': 'helloclick'
